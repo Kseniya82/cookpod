@@ -13,9 +13,9 @@ defmodule Cookpod.MixProject do
       deps: deps(),
       test_coverage: [tool: ExCoveralls],
       preferred_cli_env: [
-        coveralls: :test, 
-        "coveralls.detail": :test, 
-        "coveralls.post": :test, 
+        coveralls: :test,
+        "coveralls.detail": :test,
+        "coveralls.post": :test,
         "coveralls.html": :test
       ],
       elixirc_options: [warnings_as_errors: true]
