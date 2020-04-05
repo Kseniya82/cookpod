@@ -1,4 +1,4 @@
-name: Elixir CI
+name: build
 
 on:
   push:
@@ -43,4 +43,3 @@ jobs:
     - run: mix credo
     - run: mix test
     - run: MIX_ENV=test mix coveralls.github
-    - run: mix dialyzer
