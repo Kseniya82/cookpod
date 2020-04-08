@@ -1,0 +1,86 @@
+## This file is a PO Template file.
+##
+## "msgid"s here are often extracted from source code.
+## Add new translations manually only if they're dynamic
+## translations that can't be statically extracted.
+##
+## Run "mix gettext.extract" to bring this file up to
+## date. Leave "msgstr"s empty as changing them here as no
+## effect: edit them in PO (.po) files instead.
+msgid ""
+msgstr ""
+
+#, elixir-format
+#: lib/cookpod_web/templates/page/terms.html.slime:1
+msgid " under the terms of a simple (non-exclusive) license"
+msgstr " на условиях простой (неисключительной) лицензии"
+
+#, elixir-format
+#: lib/cookpod_web/templates/page/terms.html.slime:1
+msgid "If the User does not accept the terms in full, the User shall refrain from using the Site."
+msgstr "если Пользователь не принимает условия Правил в полном объёме, Пользователь обязан воздержаться от пользования Сайтом"
+
+#, elixir-format
+#: lib/cookpod_web/templates/page/terms.html.slime:1
+msgid "Interfere in the Site operation in ways that may result in failure of its operability, "
+msgstr "вмешиваться в работу Сайта способами, следствием использования которых может быть нарушение его работоспособности"
+
+#, elixir-format
+#: lib/cookpod_web/templates/page/terms.html.slime:1
+msgid "Perform modification, improvement, translation into other languages, decompiling, disassembly, "
+msgstr "Осуществлять модификацию, усовершенствование, перевод на другие языки, декомпилирование, дизассемблирование, "
+
+#, elixir-format
+#: lib/cookpod_web/templates/page/terms.html.slime:1
+msgid "Terms and condition"
+msgstr "Условия использования"
+
+#, elixir-format
+#: lib/cookpod_web/templates/page/terms.html.slime:1
+msgid "The Site Owner grants the User a non-transferable right"
+msgstr "Владелец Сайта предоставляет Пользователю непередаваемое право"
+
+#, elixir-format
+#: lib/cookpod_web/templates/page/terms.html.slime:1
+msgid "The User expresses his full and unconditional consent that the use of the Site, "
+msgstr "Пользователь выражает свое полное и безоговорочное согласие, что использование Сайта"
+
+#, elixir-format
+#: lib/cookpod_web/templates/page/terms.html.slime:1
+msgid "The user has been informed and agrees to refrain from the following actions:"
+msgstr "Пользователь проинформирован и выражает согласие воздерживаться от следующих действий:"
+
+#, elixir-format
+#: lib/cookpod_web/templates/page/terms.html.slime:1
+msgid "Use any program or application not authorized by the Site Owner to interact with the Site;"
+msgstr "Использовать любые не авторизованные Владельцем Сайта программы или приложения для взаимодействия с Сайтом"
+
+#, elixir-format
+#: lib/cookpod_web/templates/page/index.html.eex:2
+msgid "Welcome to %{name}!"
+msgstr "Добро пожаловать в %{name}!"
+
+#, elixir-format
+#: lib/cookpod_web/templates/page/terms.html.slime:1
+msgid "as well as any parts thereof, in any way means full and unconditional consent to these terms."
+msgstr "а также любых его частей, любым способом означает полное и безоговорочное согласие с настоящими условиями."
+
+#, elixir-format
+#: lib/cookpod_web/templates/page/terms.html.slime:1
+msgid "decoding, emulation, integrity violation, restoration of source code of the Site or any parts thereof;"
+msgstr "декодирование, эмуляцию, нарушение целостности, восстановление исходного кода Сервиса или каких-либо его частей"
+
+#, elixir-format
+#: lib/cookpod_web/templates/page/terms.html.slime:1
+msgid "for its direct functional purpose free of charge,"
+msgstr "по его прямому функциональному назначению,"
+
+#, elixir-format
+#: lib/cookpod_web/templates/page/terms.html.slime:1
+msgid "including generation of requests other than through the user interface;"
+msgstr "в том числе формировать запросы иначе как через пользовательский интерфейс;"
+
+#, elixir-format
+#: lib/cookpod_web/templates/page/terms.html.slime:1
+msgid "to use the Site on the territory of all countries of the world"
+msgstr "использования Сервиса на территории всех стран мира "

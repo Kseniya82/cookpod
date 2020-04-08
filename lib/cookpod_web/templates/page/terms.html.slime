@@ -1,0 +1,27 @@
+h1 class="text-uppercase"
+  = gettext("Terms and condition")
+
+p class="text-justify"
+  = gettext("The User expresses his full and unconditional consent that the use of the Site, ") 
+  = gettext("as well as any parts thereof, in any way means full and unconditional consent to these terms.")
+  = gettext("If the User does not accept the terms in full, the User shall refrain from using the Site.")
+
+p class="text-justify"
+  = gettext("The Site Owner grants the User a non-transferable right")
+  = gettext("to use the Site on the territory of all countries of the world")
+  = gettext("for its direct functional purpose free of charge,")
+  = gettext(" under the terms of a simple (non-exclusive) license")
+
+p class="text-justify"
+  = gettext("The user has been informed and agrees to refrain from the following actions:")
+ul
+  li 
+    = gettext("Interfere in the Site operation in ways that may result in failure of its operability, ")
+    = gettext("including generation of requests other than through the user interface;")
+  li 
+    = gettext("Use any program or application not authorized by the Site Owner to interact with the Site;")
+  li 
+    = gettext("Perform modification, improvement, translation into other languages, decompiling, disassembly, ")
+  li 
+    = gettext("decoding, emulation, integrity violation, restoration of source code of the Site or any parts thereof;")
+
