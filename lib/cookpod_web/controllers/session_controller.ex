@@ -15,6 +15,7 @@ defmodule CookpodWeb.SessionController do
       errors when map_size(errors) == 0 ->
         conn
         |> put_session(:current_user, user["name"])
+        |> put_flash(:info, "Successfully logined as #{user["name"]}")
         |> redirect(to: Routes.page_path(conn, :index))
 
       errors ->
@@ -29,7 +30,8 @@ defmodule CookpodWeb.SessionController do
   end
 
   defp validate_user(user) do
-    Enum.reduce(user, %{}, fn {name, value}, acc ->
+    user
+    |> Enum.reduce(%{}, fn {name, value}, acc ->
       if String.length(value) == 0, do: Map.put(acc, name, "#{name} cannot be blank"), else: acc
     end)
   end

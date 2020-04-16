@@ -27,6 +27,14 @@ defmodule CookpodWeb.PageControllerTest do
     assert html_response(conn, 302) =~ "redirected"
   end
 
+  test "GET / without basic auth credentials prevents access", %{conn: conn} do
+    conn =
+      conn
+      |> get("/")
+
+    assert response(conn, 401) =~ "401 Unauthorized"
+  end
+
   test "GET /terms without basic auth credentials prevents access", %{conn: conn} do
     conn =
       conn

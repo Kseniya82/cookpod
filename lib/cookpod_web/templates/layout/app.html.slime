@@ -9,11 +9,11 @@ html lang="en"
   
   body
     header
-      ssection.container
+      section.container
         nav role="navigation"
           ul
           = if assigns[:current_user] do
-            li = link "Log out", to: Routes.session_path(@conn, :delete, 1), method: :delete
+            li = link "Log out", to: Routes.session_path(@conn, :delete), method: :delete
             li
               a href=Routes.page_path(@conn, :terms) Terms
           - else
@@ -21,9 +21,11 @@ html lang="en"
               a href=Routes.session_path(@conn, :new) Login
     main.container role="main"
       = if get_flash(@conn, :info) do
-        p class="alert alert-info" role="alert">= get_flash(@conn, :info) 
+        p class="alert alert-info" role="alert"
+          = get_flash(@conn, :info) 
       = if get_flash(@conn, :error) do
-        p class="alert alert-danger" role="alert">= get_flash(@conn, :error)
-   
+        p class="alert alert-danger" role="alert"
+          = get_flash(@conn, :error)
+            section class="phx-hero"
       = render @view_module, @view_template, assigns
     script type="text/javascript" src="#{Routes.static_path(@conn, "/js/app.js")}"
