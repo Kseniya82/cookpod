@@ -18,6 +18,13 @@ config :cookpod, CookpodWeb.Endpoint,
   pubsub: [name: Cookpod.PubSub, adapter: Phoenix.PubSub.PG2],
   live_view: [signing_salt: "d15X4uB4"]
 
+config :cookpod,
+  basic_auth: [
+    username: "user",
+    password: "123456",
+    realm: "BASIC_AUTH_REALM"
+  ]
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
