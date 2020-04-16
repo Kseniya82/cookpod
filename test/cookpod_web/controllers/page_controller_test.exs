@@ -16,7 +16,7 @@ defmodule CookpodWeb.PageControllerTest do
       |> get("/")
 
     assert html_response(conn, 302) =~ "redirected"
-  # это странно
+    # это странно
   end
 
   test "GET /terms for unauthorized user", %{conn: conn} do
