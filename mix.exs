@@ -13,10 +13,7 @@ defmodule Cookpod.MixProject do
       deps: deps(),
       test_coverage: [tool: ExCoveralls],
       preferred_cli_env: [
-        coveralls: :test,
-        "coveralls.detail": :test,
-        "coveralls.post": :test,
-        "coveralls.html": :test
+        "coveralls.json": :test
       ],
       elixirc_options: [warnings_as_errors: true]
     ]
@@ -54,7 +51,8 @@ defmodule Cookpod.MixProject do
       {:credo, "~> 1.2", only: [:dev, :test], runtime: false},
       {:dialyxir, "~> 1.0", only: [:dev, :test], runtime: false},
       {:excoveralls, "~> 0.10", only: :test},
-      {:phoenix_slime, "~> 0.13.1"}
+      {:phoenix_slime, "~> 0.13.1"},
+      {:basic_auth, "~> 2.2.2"}
     ]
   end
 

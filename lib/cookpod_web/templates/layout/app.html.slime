@@ -1,0 +1,31 @@
+doctype html
+html lang="en"
+  head
+    meta charset="utf-8"
+    meta http-equiv="X-UA-Compatible" content="IE=edge"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    title = assigns[:page_title] || "Cookpod"
+    link rel="stylesheet" href="#{Routes.static_path(@conn, "/css/app.css")}"
+  
+  body
+    header
+      section.container
+        nav role="navigation"
+          ul
+          = if assigns[:current_user] do
+            li = link "Log out", to: Routes.session_path(@conn, :delete), method: :delete
+            li
+              a href=Routes.page_path(@conn, :terms) Terms
+          - else
+            li
+              a href=Routes.session_path(@conn, :new) Login
+    main.container role="main"
+      = if get_flash(@conn, :info) do
+        p class="alert alert-info" role="alert"
+          = get_flash(@conn, :info) 
+      = if get_flash(@conn, :error) do
+        p class="alert alert-danger" role="alert"
+          = get_flash(@conn, :error)
+            section class="phx-hero"
+      = render @view_module, @view_template, assigns
+    script type="text/javascript" src="#{Routes.static_path(@conn, "/js/app.js")}"
