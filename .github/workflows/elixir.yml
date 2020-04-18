@@ -44,8 +44,8 @@ jobs:
     - run: mix coverall.json
     # - run: MIX_ENV=test mix coveralls.github
 
-     - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v1.0.6
-        with:
-          file: cover/excoveralls.json
-          fail_ci_if_error: false # is default
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v1.0.6
+      with:
+        file: cover/excoveralls.json
+        fail_ci_if_error: false # is default
