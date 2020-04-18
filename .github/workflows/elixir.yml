@@ -41,7 +41,7 @@ jobs:
     
     - run: mix format --check-formatted
     - run: mix credo
-    - run: mix coverall.json
+    - run: mix coveralls.json
     # - run: MIX_ENV=test mix coveralls.github
 
     - name: Upload coverage to Codecov
