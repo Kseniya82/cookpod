@@ -23,7 +23,7 @@ defmodule CookpodWeb.Router do
   scope "/", CookpodWeb do
     pipe_through :browser
 
-    resources "/sessions", SessionController, only: [:new, :create, :delete], singleton: true
+    resources "/session", SessionController, only: [:new, :create, :delete], singleton: true
     resources "/users", UserController, only: [:new, :create]
   end
 
