@@ -18,6 +18,7 @@ defmodule CookpodWeb.UserController do
         |> put_session(:current_user, user)
         |> put_flash(:info, "Successfully logined as #{user.email}")
         |> redirect(to: Routes.page_path(conn, :index))
+
       {:error, changeset} ->
         render(conn, "new.html", changeset: changeset)
     end

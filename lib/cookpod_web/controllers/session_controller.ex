@@ -16,9 +16,10 @@ defmodule CookpodWeb.SessionController do
         conn
         |> put_session(:current_user, user)
         |> redirect(to: Routes.page_path(conn, :index))
+
       {:error, _} ->
         text(conn, "ERROR!")
-    end 
+    end
   end
 
   def delete(conn, _params) do
