@@ -27,7 +27,7 @@ defmodule CookpodWeb.SessionControllerTest do
       |> using_basic_auth(@username, @password)
       |> init_test_session(%{current_user: %{email: "user@cookpod.com", password: "123123"}})
       |> put_req_header("content-type", "application/x-www-form-urlencoded")
-      |> post("/sessions", "user%5Bemail%5D=user%40cookpod.com&user%5Bpassword%5D=123123")
+      |> post("/session", "user%5Bemail%5D=user%40cookpod.com&user%5Bpassword%5D=123123")
 
     conn = get(recycle(conn), "/")
     assert html_response(conn, 200) =~ "You are logged in as"
