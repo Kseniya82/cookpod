@@ -9,6 +9,7 @@ defmodule CookpodWeb.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug :set_current_user
   end
 
   pipeline :api do
@@ -22,7 +23,8 @@ defmodule CookpodWeb.Router do
   scope "/", CookpodWeb do
     pipe_through :browser
 
-    resources "/session", SessionController, singleton: true
+    resources "/sessions", SessionController, only: [:new, :create, :delete], singleton: true
+    resources "/users", UserController, only: [:new, :create]
   end
 
   scope "/", CookpodWeb do
@@ -59,5 +61,10 @@ defmodule CookpodWeb.Router do
     |> fetch_flash()
     |> put_layout({CookpodWeb.LayoutView, :app})
     |> put_view(CookpodWeb.ErrorView)
+  end
+
+  defp set_current_user(conn, _params) do
+    current_user = get_session(conn, :current_user)
+    assign(conn, :current_user, current_user)
   end
 end
