@@ -1,5 +1,6 @@
 defmodule Cookpod.Recipes.Uploaders.Picture do
   @moduledoc false
+
   use Arc.Definition
   use Arc.Ecto.Definition
 

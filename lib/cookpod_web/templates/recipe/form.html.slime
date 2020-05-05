@@ -12,4 +12,4 @@
   = file_input f, :picture, class: "form-control"
   = error_tag f, :picture
   div
-     = submit("Submit", class: "btn btn-primary")
+    = submit("Submit", class: "btn btn-primary")
