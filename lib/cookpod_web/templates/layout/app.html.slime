@@ -12,13 +12,14 @@ html lang="en"
       section.container
         nav role="navigation"
           ul
-          = if assigns[:current_user] do
-            li = link "Log out", to: Routes.session_path(@conn, :delete), method: :delete
-            li
-              a href=Routes.page_path(@conn, :terms) Terms
-          - else
-            li
-              a href=Routes.session_path(@conn, :new) Login
+          .mt-4
+            .jumbotron
+              = if @current_user do
+                p = "You are logged in as #{@current_user.email}"
+              - else
+                a href=Routes.user_path(@conn, :new) Sign up
+                p You are not logged in
+                a href=Routes.session_path(@conn, :new) Login
     main.container role="main"
       = if get_flash(@conn, :info) do
         p class="alert alert-info" role="alert"

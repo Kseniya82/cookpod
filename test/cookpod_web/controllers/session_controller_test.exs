@@ -10,25 +10,6 @@ defmodule CookpodWeb.SessionControllerTest do
     put_req_header(conn, "authorization", header_content)
   end
 
-  test "GET /session as logged in user", %{conn: conn} do
-    conn =
-      conn
-      |> using_basic_auth(@username, @password)
-      |> init_test_session(%{current_user: "test-user"})
-      |> get(Routes.session_path(conn, :show))
-
-    assert html_response(conn, 200) =~ "You are logged in"
-  end
-
-  test "GET /session", %{conn: conn} do
-    conn =
-      conn
-      |> using_basic_auth(@username, @password)
-      |> get("/session")
-
-    assert html_response(conn, 200) =~ "You are not logged in"
-  end
-
   test "GET /session/new", %{conn: conn} do
     conn =
       conn
@@ -36,7 +17,7 @@ defmodule CookpodWeb.SessionControllerTest do
       |> get("/session/new")
 
     assert html_response(conn, 200) =~ "Submit"
-    assert html_response(conn, 200) =~ "Name"
+    assert html_response(conn, 200) =~ "Email"
     assert html_response(conn, 200) =~ "Password"
   end
 
@@ -44,17 +25,11 @@ defmodule CookpodWeb.SessionControllerTest do
     conn =
       conn
       |> using_basic_auth(@username, @password)
+      |> init_test_session(%{current_user: %{email: "user@cookpod.com", password: "123123"}})
       |> put_req_header("content-type", "application/x-www-form-urlencoded")
-      |> post("/session", "user%5Bname%5D=John&user%5Bpassword%5D=123")
+      |> post("/session", "user%5Bemail%5D=user%40cookpod.com&user%5Bpassword%5D=123123")
 
-    assert redirected_to(conn, 302) =~ "/"
     conn = get(recycle(conn), "/")
-    assert html_response(conn, 200) =~ "Successfully logined as"
-  end
-
-  test "GET /session without basic auth credentials prevents access", %{conn: conn} do
-    conn = get(conn, "/session")
-
-    assert response(conn, 401) =~ "401 Unauthorized"
+    assert html_response(conn, 200) =~ "You are logged in as"
   end
 end
