@@ -38,6 +38,9 @@ config :phoenix, :template_engines,
   slime: PhoenixSlime.Engine,
   slimleex: PhoenixSlime.LiveViewEngine
 
+config :arc,
+  storage: Arc.Storage.Local
+
 config :cookpod, CookpodWeb.Gettext, locales: ~w(en ru), default_locale: "ru"
 
 # Import environment specific config. This must remain at the bottom
