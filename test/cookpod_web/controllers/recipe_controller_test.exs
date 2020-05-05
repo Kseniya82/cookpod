@@ -47,6 +47,7 @@ defmodule CookpodWeb.RecipeControllerTest do
       conn
       |> prepare()
       |> get(Routes.recipe_path(conn, :index))
+
       assert html_response(conn, 200) =~ "Listing Recipes"
     end
   end
@@ -56,6 +57,7 @@ defmodule CookpodWeb.RecipeControllerTest do
       conn
       |> prepare()
       |> get(conn, Routes.recipe_path(conn, :new))
+
       assert html_response(conn, 200) =~ "New Recipe"
     end
   end
@@ -77,6 +79,7 @@ defmodule CookpodWeb.RecipeControllerTest do
       conn
       |> prepare()
       |> post(conn, Routes.recipe_path(conn, :create), recipe: @invalid_attrs)
+
       assert html_response(conn, 200) =~ "New Recipe"
     end
   end
@@ -88,6 +91,7 @@ defmodule CookpodWeb.RecipeControllerTest do
       conn
       |> prepare()
       |> get(conn, Routes.recipe_path(conn, :edit, recipe))
+
       assert html_response(conn, 200) =~ "Edit Recipe"
     end
   end
@@ -99,6 +103,7 @@ defmodule CookpodWeb.RecipeControllerTest do
       conn
       |> prepare()
       |> put(conn, Routes.recipe_path(conn, :update, recipe), recipe: @update_attrs)
+
       assert redirected_to(conn) == Routes.recipe_path(conn, :show, recipe)
 
       conn = get(conn, Routes.recipe_path(conn, :show, recipe))
@@ -109,6 +114,7 @@ defmodule CookpodWeb.RecipeControllerTest do
       conn
       |> prepare()
       |> put(conn, Routes.recipe_path(conn, :update, recipe), recipe: @invalid_attrs)
+
       assert html_response(conn, 200) =~ "Edit Recipe"
     end
   end
@@ -120,7 +126,9 @@ defmodule CookpodWeb.RecipeControllerTest do
       conn
       |> prepare()
       |> delete(conn, Routes.recipe_path(conn, :delete, recipe))
+
       assert redirected_to(conn) == Routes.recipe_path(conn, :index)
+
       assert_error_sent 404, fn ->
         get(conn, Routes.recipe_path(conn, :show, recipe))
       end

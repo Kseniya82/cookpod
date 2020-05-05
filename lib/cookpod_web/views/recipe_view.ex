@@ -1,6 +1,6 @@
 defmodule CookpodWeb.RecipeView do
   use CookpodWeb, :view
-  
+
   alias Cookpod.Recipes.Uploaders.Picture
   alias CookpodWeb.Endpoint
 
