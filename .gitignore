@@ -36,3 +36,5 @@ npm-debug.log
 .DS_Store
 
 .pg_data/
+
+/uploads/

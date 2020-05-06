@@ -16,6 +16,7 @@ html lang="en"
             .jumbotron
               = if @current_user do
                 p = "You are logged in as #{@current_user.email}"
+                a href=Routes.recipe_path(@conn, :index) Recipes
               - else
                 a href=Routes.user_path(@conn, :new) Sign up
                 p You are not logged in
