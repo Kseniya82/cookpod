@@ -1,12 +1,12 @@
-defmodule Cookpod.Recipies do
+defmodule Cookpod.Recipes do
   @moduledoc """
-  The Recipies context.
+  The Recipes context.
   """
 
   import Ecto.Query, warn: false
   alias Cookpod.Repo
 
-  alias Cookpod.Recipies.Recipe
+  alias Cookpod.Recipes.Recipe
 
   @doc """
   Returns the list of recipes.
