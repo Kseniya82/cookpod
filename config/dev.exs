@@ -17,6 +17,7 @@ config :cookpod, Cookpod.Repo,
 # with webpack to recompile .js and .css sources.
 config :cookpod, CookpodWeb.Endpoint,
   http: [port: 4000],
+  url: [host: "localhost"],
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
@@ -63,7 +64,8 @@ config :cookpod, CookpodWeb.Endpoint,
       ~r"lib/cookpod_web/(live|views)/.*(ex)$",
       ~r"lib/cookpod_web/templates/.*(eex|slim|slime)$"
     ]
-  ]
+  ],
+  reloadable_compilers: [:gettext, :phoenix, :elixir, :phoenix_swagger]
 
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"
