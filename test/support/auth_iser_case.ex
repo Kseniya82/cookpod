@@ -1,4 +1,5 @@
 defmodule CookpodWeb.AuthUserCase do
+  @moduledoc false
   use ExUnit.CaseTemplate
   import Plug.Conn
   import Cookpod.Factory
@@ -27,14 +28,14 @@ defmodule CookpodWeb.AuthUserCase do
     conn = Phoenix.ConnTest.build_conn()
     current_user = insert(:user)
 
-    unless tags[:noname] do
+    if tags[:noname] do
+      {:ok, conn: conn}
+    else
       conn =
         conn
         |> using_basic_auth(@username, @password)
 
       {:ok, current_user: current_user, conn: conn}
-    else
-      {:ok, conn: conn}
     end
   end
 

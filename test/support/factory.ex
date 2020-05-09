@@ -1,4 +1,5 @@
 defmodule Cookpod.Factory do
+  @moduledoc false
   # with Ecto
   use ExMachina.Ecto, repo: Cookpod.Repo
 
