@@ -25,6 +25,16 @@ config :cookpod,
     realm: "BASIC_AUTH_REALM"
   ]
 
+config :cookpod, :phoenix_swagger,
+  swagger_files: %{
+    "priv/static/swagger.json" => [
+      router: CookpodWeb.Router,
+      endpoint: CookpodWeb.Endpoint
+    ]
+  }
+
+config :phoenix_swagger, json_library: Jason
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
@@ -32,6 +42,8 @@ config :logger, :console,
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
+
+config :ex_aws, json_codec: Jason
 
 config :phoenix, :template_engines,
   slim: PhoenixSlime.Engine,
