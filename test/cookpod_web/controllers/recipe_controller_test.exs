@@ -26,7 +26,7 @@ defmodule CookpodWeb.RecipeControllerTest do
     recipe
   end
 
-  escribe "index" do
+  describe "index" do
     test "lists all recipes", %{conn: conn} do
       conn = get(conn, Routes.recipe_path(conn, :index))
 
